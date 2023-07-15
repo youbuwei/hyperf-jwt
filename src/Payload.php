@@ -192,6 +192,7 @@ class Payload implements \ArrayAccess, Arrayable, \Countable, Jsonable, \JsonSer
      *
      * @param mixed $key
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($key): bool
     {
         return Arr::has($this->toArray(), $key);
@@ -204,6 +205,7 @@ class Payload implements \ArrayAccess, Arrayable, \Countable, Jsonable, \JsonSer
      *
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($key)
     {
         return Arr::get($this->toArray(), $key);
@@ -217,6 +219,7 @@ class Payload implements \ArrayAccess, Arrayable, \Countable, Jsonable, \JsonSer
      *
      * @throws \Youbuwei\HyperfJwt\Exceptions\PayloadException
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($key, $value)
     {
         throw new PayloadException('The payload is immutable');
